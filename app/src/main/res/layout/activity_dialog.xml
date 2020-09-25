@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clipToPadding="false"
+    android:padding="@dimen/dp_12"
+    tools:context="dialog.DialogActivity">
+
+    <Button
+        android:id="@+id/dialogActivityBtnRightAngleMessageDialogWithNoTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:text="@string/rightAngleMessageDialogWithNoTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dialogActivityBtnRightAngleMessageDialogWithTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/rightAngleMessageDialogWithTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogActivityBtnRightAngleMessageDialogWithNoTitle" />
+
+    <Button
+        android:id="@+id/dialogActivityBtnRoundCornerMessageDialogWithNoTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/roundCornerMessageDialogWithNoTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogActivityBtnRightAngleMessageDialogWithTitle" />
+
+    <Button
+        android:id="@+id/dialogActivityBtnRoundCornerMessageDialogWithTitle"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/roundCornerMessageDialogWithTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogActivityBtnRoundCornerMessageDialogWithNoTitle" />
+
+    <Button
+        android:id="@+id/dialogActivityBtnCommonLoadingDialog"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/commonLoadingDialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogActivityBtnRoundCornerMessageDialogWithTitle" />
+
+    <Button
+        android:id="@+id/dialogActivityBtnCanCancelLoadingDialog"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/canCancelLoadingDialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogActivityBtnCommonLoadingDialog" />
+</androidx.constraintlayout.widget.ConstraintLayout>

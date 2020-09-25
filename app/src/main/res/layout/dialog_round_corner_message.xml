@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_solid_r12"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/roundCornerMessageDialogTvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:gravity="center"
+            android:textColor="@color/fontInput"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone"
+            tools:text="标题" />
+
+        <TextView
+            android:id="@+id/roundCornerMessageDialogTvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dp_66"
+            android:textColor="@color/fontHint"
+            android:textSize="@dimen/sp_14"
+            tools:text="内容" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_1"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false">
+
+        <Button
+            android:id="@+id/roundCornerMessageDialogBtnLeft"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_weight="1"
+            android:background="@drawable/white_color_primary_solid_blr12_selector"
+            android:textColor="@color/color_primary_white_color_selector"
+            android:textSize="@dimen/sp_14"
+            tools:text="取消" />
+
+        <View
+            android:layout_width="@dimen/px_1"
+            android:layout_height="match_parent"
+            android:background="@color/gray" />
+
+        <Button
+            android:id="@+id/roundCornerMessageDialogBtnRight"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_weight="1"
+            android:background="@drawable/white_color_primary_solid_brr12_selector"
+            android:textColor="@color/color_primary_white_color_selector"
+            android:textSize="@dimen/sp_14"
+            tools:text="确定" />
+    </LinearLayout>
+</LinearLayout>

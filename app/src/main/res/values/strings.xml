@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="todo">TODO</string>
+    <string name="useRecyclerView">使用 RecyclerView</string>
+    <string name="useListView">使用 ListView</string>
+    <string name="circle">圆</string>
+    <string name="line">线</string>
+    <string name="rect">矩形</string>
+    <string name="point">点</string>
+    <string name="oval">椭圆</string>
+    <string name="text">文本</string>
+    <string name="arc">弧</string>
+    <string name="path">路径</string>
+    <string name="rightAngleMessageDialogWithNoTitle">直角消息对话框（无标题）</string>
+    <string name="rightAngleMessageDialogWithTitle">直角消息对话框（有标题）</string>
+    <string name="roundCornerMessageDialogWithNoTitle">圆角消息对话框（无标题）</string>
+    <string name="roundCornerMessageDialogWithTitle">圆角消息对话框（有标题）</string>
+    <string name="commonLoadingDialog">普通加载对话框</string>
+    <string name="canCancelLoadingDialog">可取消加载对话框</string>
+    <string name="pop">弹出</string>
+    <string name="update">更新</string>
+    <string name="getProperty">获取属性</string>
+    <string name="localLoad">本地加载</string>
+    <string name="networkLoad">网络加载</string>
+</resources>

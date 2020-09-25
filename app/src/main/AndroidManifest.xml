@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name="application.App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="grid.GridActivity" />
+        <activity android:name="image.ImageActivity" />
+        <activity android:name="property.PropertyActivity" />
+        <activity android:name="mvp.MvpActivity" />
+        <activity android:name="toast.ToastActivity" />
+        <activity android:name="dialog.DialogActivity" />
+        <activity
+            android:name="customview.path.PathActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.arc.ArcActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.text.TextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.oval.OvalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.point.PointActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.rect.RectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.line.LineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="customview.circle.CircleActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="customview.CustomViewActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

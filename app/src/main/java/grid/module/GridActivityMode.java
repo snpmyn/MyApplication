@@ -1,0 +1,76 @@
+package grid.module;
+
+import androidx.annotation.DrawableRes;
+
+import widget.grid.IGrid;
+
+/**
+ * Created on 2020-09-23
+ *
+ * @author zsp
+ * @desc 网格页 module
+ */
+public class GridActivityMode implements IGrid {
+    private String id;
+    private String title;
+    @DrawableRes
+    private int intIconId;
+    private String stringIconId;
+    private String description;
+
+    /**
+     * constructor
+     *
+     * @param id           ID
+     * @param title        标题
+     * @param intIconId    整型资源 ID
+     * @param stringIconId 字符串型资源 ID
+     * @param description  描述
+     */
+    public GridActivityMode(String id, String title, int intIconId, String stringIconId, String description) {
+        this.id = id;
+        this.title = title;
+        this.intIconId = intIconId;
+        this.stringIconId = stringIconId;
+        this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * 获取标题
+     *
+     * @return 标题
+     */
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * 获取整型图标 ID
+     *
+     * @return 整型图标 ID
+     */
+    @Override
+    public int getIntIconId() {
+        return intIconId;
+    }
+
+    /**
+     * 获取字符串图标 ID
+     *
+     * @return 字符串图标 ID
+     */
+    @Override
+    public String getStringIconId() {
+        return stringIconId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
+
