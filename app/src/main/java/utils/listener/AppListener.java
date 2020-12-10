@@ -23,7 +23,7 @@ public class AppListener {
     private static AppListener appListener;
     private boolean hasInitConfiguration = false;
     private boolean areForeground = false;
-    private Set<Callback> callbackSet = new HashSet<>();
+    private final Set<Callback> callbackSet = new HashSet<>();
 
     public static AppListener getInstance() {
         if (null == appListener) {
@@ -70,7 +70,7 @@ public class AppListener {
     }
 
     private class ActivityLifecycle implements Application.ActivityLifecycleCallbacks {
-        private Set<Activity> activitySet = new HashSet<>();
+        private final Set<Activity> activitySet = new HashSet<>();
 
         @Override
         public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle bundle) {

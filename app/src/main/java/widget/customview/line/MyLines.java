@@ -1,5 +1,6 @@
 package widget.customview.line;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -43,18 +44,18 @@ public class MyLines extends View {
         paint.setColor(Color.RED);
         paint.setStrokeWidth(24.0f);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        float[] floats = new float[]{Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
+        @SuppressLint("DrawAllocation") float[] floats = new float[]{Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
-                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120),
+                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
-                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120),
+                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
-                Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120),
+                Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
-                Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2 - 240),
+                Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2 - 240).floatValue(),
                 Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(),
-                Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2 + 240)};
+                Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2 + 240).floatValue()};
         canvas.drawLines(floats, paint);
     }
 }

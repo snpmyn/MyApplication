@@ -42,9 +42,7 @@ public class LogUtils {
             methodInfoWithThrowable = c.getDeclaredMethod("i", String.class, String.class, Throwable.class);
             methodVerboseWithThrowable = c.getDeclaredMethod("v", String.class, String.class, Throwable.class);
             methodWarnWithThrowable = c.getDeclaredMethod("w", String.class, String.class, Throwable.class);
-        } catch (ClassNotFoundException e) {
-            exception(e);
-        } catch (NoSuchMethodException e) {
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
             exception(e);
         }
         if (c == null) {

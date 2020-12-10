@@ -16,9 +16,9 @@ import utils.log.LogUtils;
  * @desc ViewPager 适配器
  */
 public class ViewPagerAdapter extends PagerAdapter {
-    private ViewPager viewPager;
-    private IViewHolder iViewHolder;
-    private boolean canLoop;
+    private final ViewPager viewPager;
+    private final IViewHolder iViewHolder;
+    private final boolean canLoop;
 
     ViewPagerAdapter(ViewPager viewPager, IViewHolder iViewHolder, boolean canLoop) {
         this.viewPager = viewPager;
@@ -68,7 +68,7 @@ public class ViewPagerAdapter extends PagerAdapter {
      * @param container The containing View from which the page will be removed.
      * @param position  The page position to be removed.
      * @param object    The same object that was returned by
-     *                  {@link #instantiateItem(View, int)}.
+     *                  {@link #instantiateItem(ViewGroup, int)}.
      */
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {

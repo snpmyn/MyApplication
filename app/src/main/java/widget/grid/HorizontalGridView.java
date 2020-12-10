@@ -51,7 +51,7 @@ public class HorizontalGridView<T extends IGrid> extends LinearLayout {
     /**
      * 圆点集
      */
-    private ArrayList<ImageView> dotList = new ArrayList<>();
+    private final ArrayList<ImageView> dotList = new ArrayList<>();
     /**
      * 指示器数组
      */

@@ -5,12 +5,14 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/dp_10">
+    android:padding="@dimen/dp_10"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/gridActivityItemIv"
         android:layout_width="@dimen/dp_24"
-        android:layout_height="@dimen/dp_24" />
+        android:layout_height="@dimen/dp_24"
+        android:contentDescription="@string/toDo" />
 
     <TextView
         android:id="@+id/gridActivityItemTv"

@@ -28,6 +28,7 @@ import dialog.DialogActivity;
 import grid.GridActivity;
 import image.ImageActivity;
 import property.PropertyActivity;
+import value.Magic;
 import widget.adapter.helper.AdapterHelper;
 import widget.adapter.decoration.HorizontalDividerDecoration;
 import widget.adapter.decoration.VerticalDividerDecoration;
@@ -61,7 +62,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_main;
     }
 
@@ -69,7 +70,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         mainActivityMlv = findViewById(R.id.mainActivityMlv);
         mainActivityRv = findViewById(R.id.mainActivityRv);
         mainActivityBtn = findViewById(R.id.mainActivityBtn);
@@ -205,7 +206,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         // 小米机型无论授予权限否，shouldShowRequestPermissionRationale 都为 false。故需另加判断 grantResults[0] == -1。
-        if ((requestCode == 0x01) && (grantResults[0] == -1) && !shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+        if ((requestCode == Magic.INT_ZERO_X_ZERO_ONE) && (grantResults[0] == -1) && !shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
             RoundCornerMessageDialog roundCornerMessageDialog = new RoundCornerMessageDialog.Builder(this, 0)
                     .setTitle("权限")
                     .setTitleColor(ContextCompat.getColor(this, R.color.fontInput))

@@ -2,14 +2,14 @@
 
 buildscript {
     repositories {
-//        google()
-//        jcenter()
-        maven {
+        google()
+        jcenter()
+        /*maven {
             url "http://22.11.31.43:9999/nexus/content/groups/android-group/"
-        }
+        }*/
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:4.1.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,9 +18,9 @@ buildscript {
 
 allprojects {
     repositories {
-//        google()
-//        jcenter()
-        maven {
+        google()
+        jcenter()
+        /*maven {
             url "http://22.11.31.43:9999/nexus/content/groups/android-group/"
         }
         maven {
@@ -31,7 +31,7 @@ allprojects {
         }
         maven {
             url "http://22.11.31.43:9999/nexus/content/repositories/thirdparty/"
-        }
+        }*/
     }
 }
 

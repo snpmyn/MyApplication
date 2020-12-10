@@ -7,8 +7,8 @@ package com.example.myapplication.module;
  * @desc 主页 module
  */
 public class MainActivityModule {
-    private String name;
-    private String commentate;
+    private final String name;
+    private final String commentate;
 
     /**
      * constructor

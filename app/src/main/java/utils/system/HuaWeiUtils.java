@@ -11,6 +11,7 @@ import android.os.Build;
 import java.lang.reflect.Method;
 
 import utils.log.LogUtils;
+import value.Magic;
 import widget.toast.ToastKit;
 
 /**
@@ -28,7 +29,7 @@ public class HuaWeiUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= 19) {
+        if (version >= Magic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);
@@ -54,15 +55,12 @@ public class HuaWeiUtils {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             ComponentName componentName = new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.addviewmonitor.AddViewMonitorActivity");
             intent.setComponent(componentName);
-            if (RomUtils.getEmuiVersionCode() == 3.1) {
-                // 适配 ENUI 3.1
-                context.startActivity(intent);
-            } else {
+            if (RomUtils.getEmuiVersionCode() != Magic.FLOAT_THREE_DOT_ONE) {
                 // 适配 ENUI 3.0
                 componentName = new ComponentName("com.huawei.systemmanager", "com.huawei.notificationmanager.ui.NotificationManagmentActivity");
                 intent.setComponent(componentName);
-                context.startActivity(intent);
             }
+            context.startActivity(intent);
         } catch (SecurityException e) {
             Intent intent = new Intent();
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

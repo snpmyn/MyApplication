@@ -22,7 +22,7 @@ public class SignUtils {
      * @param packageName 包名
      * @return 签名 MD5Hex
      */
-    public static String getSignMD5Hex(Context context, String packageName) {
+    public static String getSignMd5Hex(Context context, String packageName) {
         byte[] sign;
         sign = getSign(context, packageName);
         if (null == sign) {
@@ -38,7 +38,7 @@ public class SignUtils {
      * @param packageName 包名
      * @return 签名 SHA256Hex
      */
-    public static String getSignSHA256Hex(Context context, String packageName) {
+    public static String getSignSha256Hex(Context context, String packageName) {
         byte[] sign;
         sign = getSign(context, packageName);
         if (null == sign) {

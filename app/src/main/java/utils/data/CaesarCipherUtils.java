@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
+import value.Magic;
+
 /**
  * @desc: 凯撒加密工具类
  * <p>
@@ -97,7 +99,7 @@ public class CaesarCipherUtils {
 
         DecryptInputStream(InputStream in, int k) {
             this.inputStream = in;
-            this.k = 0 - k;
+            this.k = -k;
         }
 
         @Override
@@ -137,25 +139,25 @@ public class CaesarCipherUtils {
      */
     private static char encrypt(char c, int offsetValue) {
         // 如果字符串中某字符是小写字母
-        if (c >= 'a' && c <= 'z') {
+        if (c >= Magic.CHAR_SMALL_A && c <= Magic.CHAR_SMALL_Z) {
             // 移动key%26位
             c += offsetValue % 26;
-            if (c < 'a') {
+            if (c < Magic.CHAR_SMALL_A) {
                 // 向左超界
                 c += 26;
-            } else if (c > 'z') {
+            } else if (c > Magic.CHAR_SMALL_Z) {
                 // 向右超界
                 c -= 26;
             }
         }
         // 如果字符串中某字符是大写字母
-        else if (c >= 'A' && c <= 'Z') {
+        else if (c >= Magic.CHAR_BIG_A && c <= Magic.CHAR_BIG_Z) {
             // 移动key%26位
             c += offsetValue % 26;
-            if (c < 'A') {
+            if (c < Magic.CHAR_BIG_A) {
                 // 向左超界
                 c += 26;
-            } else if (c > 'Z') {
+            } else if (c > Magic.CHAR_BIG_Z) {
                 // 向右超界
                 c -= 26;
             }

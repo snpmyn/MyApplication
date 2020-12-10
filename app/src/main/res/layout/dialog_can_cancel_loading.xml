@@ -12,7 +12,7 @@
         android:layout_width="@dimen/dp_24"
         android:layout_height="@dimen/dp_24"
         android:layout_marginEnd="@dimen/dp_12"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/toDo"
         android:scaleType="centerInside"
         android:src="@mipmap/dialog_can_cancel_loading" />
 
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_12"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/toDo"
         android:visibility="gone"
         app:srcCompat="@drawable/ic_close_font_input_24dp" />
 </LinearLayout>

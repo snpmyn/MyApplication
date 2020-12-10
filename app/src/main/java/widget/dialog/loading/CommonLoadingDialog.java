@@ -38,7 +38,7 @@ public class CommonLoadingDialog extends BaseInstanceDialog {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.dialog_common_loading;
     }
 
@@ -46,7 +46,7 @@ public class CommonLoadingDialog extends BaseInstanceDialog {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         commonLoadingDialogTvHint = view.findViewById(R.id.commonLoadingDialogTvHint);
     }
 
@@ -103,7 +103,7 @@ public class CommonLoadingDialog extends BaseInstanceDialog {
     }
 
     public static class Builder {
-        private CommonLoadingDialog commonLoadingDialog;
+        private final CommonLoadingDialog commonLoadingDialog;
 
         public Builder(Context context, int selfThemeResId) {
             this.commonLoadingDialog = new CommonLoadingDialog(context, selfThemeResId);

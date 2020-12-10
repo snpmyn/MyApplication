@@ -1,5 +1,6 @@
 package customview;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
 
@@ -37,7 +38,7 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_custom_view;
     }
 
@@ -45,7 +46,7 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         mainActivityBtnCircle = findViewById(R.id.mainActivityBtnCircle);
         mainActivityBtnLine = findViewById(R.id.mainActivityBtnLine);
         mainActivityBtnRect = findViewById(R.id.mainActivityBtnRect);
@@ -95,6 +96,7 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

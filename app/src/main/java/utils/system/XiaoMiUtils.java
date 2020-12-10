@@ -11,6 +11,7 @@ import android.provider.Settings;
 
 import java.lang.reflect.Method;
 
+import value.Magic;
 import widget.toast.ToastKit;
 import utils.log.LogUtils;
 
@@ -31,7 +32,7 @@ public class XiaoMiUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= 19) {
+        if (version >= Magic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);
@@ -53,13 +54,13 @@ public class XiaoMiUtils {
      */
     public static void requestPermission(Context context) {
         int versionCode = RomUtils.getMiuiVersion();
-        if (versionCode == 5) {
+        if (versionCode == Magic.INT_FIVE) {
             goToMiuiPermissionActivityOnV5(context);
-        } else if (versionCode == 6) {
+        } else if (versionCode == Magic.INT_SIX) {
             goToMiuiPermissionActivityOnV6(context);
-        } else if (versionCode == 7) {
+        } else if (versionCode == Magic.INT_SEVEN) {
             goToMiuiPermissionActivityOnV7(context);
-        } else if (versionCode == 8) {
+        } else if (versionCode == Magic.INT_EIGHT) {
             goToMiuiPermissionActivityOnV8(context);
         } else {
             LogUtils.d(TAG, "this is a special MIUI rom version, its version code " + versionCode);

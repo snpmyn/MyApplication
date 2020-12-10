@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.core.app.NotificationManagerCompat;
 
 import utils.log.LogUtils;
+import value.Magic;
 
 /**
  * Created on 2020-09-09
@@ -50,9 +51,10 @@ public class CommonToast extends Toast {
             return super.getPackageName();
         }
 
+        @Override
         public String getOpPackageName() {
             StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-            if (stackTraceElements[3].getClassName().equals(Toast.class.getName()) && stackTraceElements[3].getMethodName().equals("show")) {
+            if (stackTraceElements[Magic.INT_THREE].getClassName().equals(Toast.class.getName()) && Magic.STRING_SHOW.equals(stackTraceElements[Magic.INT_THREE].getMethodName())) {
                 return "android";
             }
             return getPackageName();

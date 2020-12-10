@@ -45,7 +45,7 @@ public class RoundCornerMessageDialog extends BaseInstanceDialog {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.dialog_round_corner_message;
     }
 
@@ -53,7 +53,7 @@ public class RoundCornerMessageDialog extends BaseInstanceDialog {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         roundCornerMessageDialogTvTitle = view.findViewById(R.id.roundCornerMessageDialogTvTitle);
         roundCornerMessageDialogTvContent = view.findViewById(R.id.roundCornerMessageDialogTvContent);
         roundCornerMessageDialogBtnLeft = view.findViewById(R.id.roundCornerMessageDialogBtnLeft);

@@ -50,8 +50,8 @@ public class GridActivityAdapter<T extends IGrid> extends BaseGridViewAdapter<T>
     }
 
     private static class ViewHolder {
-        private ImageView gridActivityItemIv;
-        private TextView gridActivityItemTv;
+        private final ImageView gridActivityItemIv;
+        private final TextView gridActivityItemTv;
 
         ViewHolder(View view) {
             gridActivityItemIv = view.findViewById(R.id.gridActivityItemIv);

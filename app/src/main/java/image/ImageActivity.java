@@ -1,5 +1,6 @@
 package image;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener 
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_image;
     }
 
@@ -35,7 +36,7 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener 
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         imageActivityIv = findViewById(R.id.imageActivityIv);
         imageActivityBtnLocalLoad = findViewById(R.id.imageActivityBtnLocalLoad);
         imageActivityBtnNetworkLoad = findViewById(R.id.imageActivityBtnNetworkLoad);
@@ -81,6 +82,7 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener 
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

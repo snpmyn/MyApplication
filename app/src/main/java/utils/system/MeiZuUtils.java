@@ -9,6 +9,7 @@ import android.os.Build;
 import java.lang.reflect.Method;
 
 import utils.log.LogUtils;
+import value.Magic;
 import widget.toast.ToastKit;
 
 /**
@@ -26,7 +27,7 @@ public class MeiZuUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= 19) {
+        if (version >= Magic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);

@@ -28,6 +28,7 @@ public class RomUtils {
             if (systemProperty != null) {
                 versionCode = systemProperty.substring(systemProperty.indexOf("_") + 1);
             }
+            assert versionCode != null;
             return Double.parseDouble(versionCode);
         } catch (Exception e) {
             LogUtils.exception(e);
@@ -88,8 +89,13 @@ public class RomUtils {
         String systemProperty = getSystemProperty("ro.build.display.id");
         if (TextUtils.isEmpty(systemProperty)) {
             return false;
-        } else
-            return systemProperty.contains("flyme") || systemProperty.toLowerCase().contains("flyme");
+        } else {
+            if (systemProperty != null) {
+                return systemProperty.contains("flyme") || systemProperty.toLowerCase().contains("flyme");
+            } else {
+                return false;
+            }
+        }
     }
 
     public static boolean qiHoo360Rom() {

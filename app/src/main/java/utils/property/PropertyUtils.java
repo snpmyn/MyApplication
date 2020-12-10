@@ -24,8 +24,8 @@ import utils.log.LogUtils;
  */
 public class PropertyUtils {
     private String line = "";
-    private List<String> keysList = new ArrayList<>();
-    private Map<String, String> keyValueMap = new LinkedHashMap<>();
+    private final List<String> keysList = new ArrayList<>();
+    private final Map<String, String> keyValueMap = new LinkedHashMap<>();
 
     private List<String> getKeysList() {
         return keysList;

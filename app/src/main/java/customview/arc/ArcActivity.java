@@ -16,7 +16,7 @@ public class ArcActivity extends BaseActivity {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_arc;
     }
 
@@ -24,7 +24,7 @@ public class ArcActivity extends BaseActivity {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
 
     }
 

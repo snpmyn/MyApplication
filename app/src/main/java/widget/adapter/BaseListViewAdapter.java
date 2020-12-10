@@ -74,10 +74,10 @@ public abstract class BaseListViewAdapter<T> extends BaseAdapter {
      * <p>
      * Provide for outer use.
      *
-     * @param OnItemChildViewClickListener 条目子视图点击监听
+     * @param onItemChildViewClickListener 条目子视图点击监听
      */
-    public void setOnItemChildViewClickListener(AdapterHelper.OnItemChildViewClickListener<T> OnItemChildViewClickListener) {
-        this.onItemChildViewClickListener = OnItemChildViewClickListener;
+    public void setOnItemChildViewClickListener(AdapterHelper.OnItemChildViewClickListener<T> onItemChildViewClickListener) {
+        this.onItemChildViewClickListener = onItemChildViewClickListener;
     }
 
     /**

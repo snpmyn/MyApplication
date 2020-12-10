@@ -31,16 +31,27 @@ public abstract class BaseDividerDecoration extends RecyclerView.ItemDecoration 
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
 
     protected enum DividerType {
-        DRAWABLE, PAINT, COLOR
+        /**
+         * 位图
+         */
+        DRAWABLE,
+        /**
+         * 画笔
+         */
+        PAINT,
+        /**
+         * 颜色
+         */
+        COLOR
     }
 
     DividerType dividerType = DividerType.DRAWABLE;
-    private VisibilityProvider visibilityProvider;
+    private final VisibilityProvider visibilityProvider;
     PaintProvider paintProvider;
     private ColorProvider colorProvider;
     DrawableProvider drawableProvider;
     SizeProvider sizeProvider;
-    private boolean showLastDivider;
+    private final boolean showLastDivider;
     boolean positionInsideItem;
     private Paint paint;
 
@@ -140,6 +151,8 @@ public abstract class BaseDividerDecoration extends RecyclerView.ItemDecoration 
                     paint.setColor(colorProvider.dividerColor(groupIndex, parent));
                     paint.setStrokeWidth(sizeProvider.dividerSize(groupIndex, parent));
                     c.drawLine(rect.left, rect.top, rect.right, rect.bottom, paint);
+                    break;
+                default:
                     break;
             }
         }
@@ -256,8 +269,23 @@ public abstract class BaseDividerDecoration extends RecyclerView.ItemDecoration 
         return position;
     }
 
+    /**
+     * 获取分割线界限
+     *
+     * @param position 位置
+     * @param parent   列表视图
+     * @param child    视图
+     * @return 矩形
+     */
     protected abstract Rect getDividerBound(int position, RecyclerView parent, View child);
 
+    /**
+     * 设置条目偏移
+     *
+     * @param outRect  矩形
+     * @param position 位置
+     * @param parent   列表视图
+     */
     protected abstract void setItemOffsets(Rect outRect, int position, RecyclerView parent);
 
     /**
@@ -332,7 +360,7 @@ public abstract class BaseDividerDecoration extends RecyclerView.ItemDecoration 
     }
 
     public static class Builder<T extends Builder> {
-        private Context context;
+        private final Context context;
         Resources resources;
         private PaintProvider mPaintProvider;
         private ColorProvider mColorProvider;
@@ -376,7 +404,7 @@ public abstract class BaseDividerDecoration extends RecyclerView.ItemDecoration 
         }
 
         public T colorResId(@ColorRes int colorId) {
-            return color(context.getResources().getColor(colorId));
+            return color(ContextCompat.getColor(context, colorId));
         }
 
         T colorProvider(ColorProvider provider) {

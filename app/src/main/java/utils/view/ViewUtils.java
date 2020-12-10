@@ -2,6 +2,8 @@ package utils.view;
 
 import android.view.View;
 
+import value.Magic;
+
 /**
  * Created on 2020-09-15
  *
@@ -33,7 +35,7 @@ public class ViewUtils {
             @Override
             public void onClick(View view) {
                 if (alreadyClick) {
-                    if (((System.currentTimeMillis() - clickTime) < 200) && null != onDoubleClickListener) {
+                    if (((System.currentTimeMillis() - clickTime) < Magic.INT_TWO_HUNDRED) && null != onDoubleClickListener) {
                         onDoubleClickListener.onDoubleClick();
                     }
                     alreadyClick = false;

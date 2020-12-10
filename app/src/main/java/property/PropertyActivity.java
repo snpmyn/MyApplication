@@ -27,7 +27,7 @@ public class PropertyActivity extends BaseActivity implements View.OnClickListen
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_property;
     }
 
@@ -35,7 +35,7 @@ public class PropertyActivity extends BaseActivity implements View.OnClickListen
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         propertyActivityTv = findViewById(R.id.propertyActivityTv);
         propertyActivityBtnGetProperty = findViewById(R.id.propertyActivityBtnGetProperty);
     }

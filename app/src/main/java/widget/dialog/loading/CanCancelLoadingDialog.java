@@ -48,7 +48,7 @@ public class CanCancelLoadingDialog extends BaseInstanceDialog {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.dialog_can_cancel_loading;
     }
 
@@ -56,7 +56,7 @@ public class CanCancelLoadingDialog extends BaseInstanceDialog {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         canCancelLoadingDialogIvLoading = view.findViewById(R.id.canCancelLoadingDialogIvLoading);
         canCancelLoadingDialogTvHint = view.findViewById(R.id.canCancelLoadingDialogTvHint);
         canCancelLoadingDialogIvClose = view.findViewById(R.id.canCancelLoadingDialogIvClose);

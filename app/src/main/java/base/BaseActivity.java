@@ -13,8 +13,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layoutResID());
-        stepUI();
+        setContentView(layoutResId());
+        stepUi();
         initConfiguration();
         setListener();
         initData();
@@ -26,12 +26,12 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return 布局资源 ID
      */
-    protected abstract int layoutResID();
+    protected abstract int layoutResId();
 
     /**
      * 初始控件
      */
-    protected abstract void stepUI();
+    protected abstract void stepUi();
 
     /**
      * 初始配置

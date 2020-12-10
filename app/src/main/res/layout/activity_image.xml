@@ -10,7 +10,7 @@
         android:id="@+id/imageActivityIv"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/toDo"
         app:layout_constraintBottom_toTopOf="@+id/imageActivityBtnLocalLoad"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

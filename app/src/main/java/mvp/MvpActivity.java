@@ -25,7 +25,7 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener, M
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_mvp;
     }
 
@@ -33,7 +33,7 @@ public class MvpActivity extends BaseActivity implements View.OnClickListener, M
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         mvpActivityTvText = findViewById(R.id.mvpActivityTvText);
         mvpActivityBtnUpdate = findViewById(R.id.mvpActivityBtnUpdate);
     }

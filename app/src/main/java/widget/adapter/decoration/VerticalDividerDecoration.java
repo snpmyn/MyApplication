@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * @desc 垂直间距装饰
  */
 public class VerticalDividerDecoration extends BaseDividerDecoration {
-    private MarginProvider marginProvider;
+    private final MarginProvider marginProvider;
 
     private VerticalDividerDecoration(Builder builder) {
         super(builder);

@@ -11,12 +11,12 @@ import widget.grid.IGrid;
  * @desc 网格页 module
  */
 public class GridActivityMode implements IGrid {
-    private String id;
-    private String title;
+    private final String id;
+    private final String title;
     @DrawableRes
-    private int intIconId;
-    private String stringIconId;
-    private String description;
+    private final int intIconId;
+    private final String stringIconId;
+    private final String description;
 
     /**
      * constructor

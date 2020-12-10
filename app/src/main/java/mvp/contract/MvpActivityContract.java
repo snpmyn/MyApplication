@@ -1,6 +1,7 @@
 package mvp.contract;
 
 import android.os.Handler;
+import android.os.Looper;
 
 import mvp.base.BasePresenter;
 import mvp.base.BaseView;
@@ -14,14 +15,14 @@ import mvp.callback.CallBack;
  */
 public interface MvpActivityContract {
     class MvpActivityModel {
-        private CallBack callBack;
+        private final CallBack callBack;
 
         MvpActivityModel(CallBack callBack) {
             this.callBack = callBack;
         }
 
         private void request() {
-            new Handler().postDelayed(new Runnable() {
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     callBack.onResult("UPDATE");
@@ -40,7 +41,7 @@ public interface MvpActivityContract {
     }
 
     class MvpActivityPresenter extends BasePresenter<MvpActivityView> {
-        private MvpActivityModel mvpActivityModel;
+        private final MvpActivityModel mvpActivityModel;
 
         public MvpActivityPresenter(final MvpActivityView mvpActivityView) {
             attachView(mvpActivityView);

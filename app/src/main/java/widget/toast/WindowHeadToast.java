@@ -18,6 +18,7 @@ import com.example.myapplication.R;
 
 import java.util.Map;
 
+import value.Magic;
 import widget.toast.listener.OnViewClickListener;
 
 /**
@@ -27,10 +28,10 @@ import widget.toast.listener.OnViewClickListener;
  * @desc 窗体头部吐司
  */
 public class WindowHeadToast implements View.OnTouchListener {
-    private Context context;
-    private String title;
-    private String content;
-    private Map<String, String> extraMap;
+    private final Context context;
+    private final String title;
+    private final String content;
+    private final Map<String, String> extraMap;
     private int downY;
     private int downX;
     private LinearLayout linearLayout;
@@ -58,7 +59,7 @@ public class WindowHeadToast implements View.OnTouchListener {
      * 初始视图
      */
     @SuppressLint("ClickableViewAccessibility")
-    private void stepUI() {
+    private void stepUi() {
         // 视图
         View view = View.inflate(context, R.layout.window_head_toast, null);
         view.setOnClickListener(new View.OnClickListener() {
@@ -164,9 +165,9 @@ public class WindowHeadToast implements View.OnTouchListener {
      * 显示
      */
     public void show() {
-        stepUI();
+        stepUi();
         animationShow();
-        new Handler().postDelayed(new Runnable() {
+        new Handler(context.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 animationDismiss();
@@ -201,13 +202,13 @@ public class WindowHeadToast implements View.OnTouchListener {
             case MotionEvent.ACTION_MOVE:
                 int currentX = (int) event.getRawX();
                 int currentY = (int) event.getRawY();
-                if (Math.abs(currentX - downX) > 50 || Math.abs(currentY - downY) > 40) {
+                if (Math.abs(currentX - downX) > Magic.INT_FIFTY || Math.abs(currentY - downY) > Magic.INT_FORTY) {
                     animationDismiss();
                 }
                 break;
             case MotionEvent.ACTION_UP:
                 // 到一定比例后松开手指关闭
-                if (Math.abs(linearLayout.getTranslationY()) > linearLayout.getMeasuredHeight() / 1.5) {
+                if (Math.abs(linearLayout.getTranslationY()) > linearLayout.getMeasuredHeight() / Magic.FLOAT_ONE_DOT_FIVE) {
                     animationDismiss();
                 } else {
                     linearLayout.setTranslationY(0);

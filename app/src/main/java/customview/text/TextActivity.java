@@ -16,7 +16,7 @@ public class TextActivity extends BaseActivity {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_text;
     }
 
@@ -24,7 +24,7 @@ public class TextActivity extends BaseActivity {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
 
     }
 

@@ -27,7 +27,7 @@ public class ToastActivity extends BaseActivity implements View.OnClickListener 
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_toast;
     }
 
@@ -35,7 +35,7 @@ public class ToastActivity extends BaseActivity implements View.OnClickListener 
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         toastActivityBtnPop = findViewById(R.id.toastActivityBtnPop);
     }
 

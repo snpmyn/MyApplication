@@ -34,7 +34,7 @@ public abstract class BaseDialog extends Dialog {
         // 基类调用
         stepView();
         // 子类实现
-        stepUI();
+        stepUi();
         setListener();
         initData();
     }
@@ -45,7 +45,7 @@ public abstract class BaseDialog extends Dialog {
     private void stepView() {
         // 内容视图
         LinearLayout baseDialogLlContent = findViewById(R.id.baseDialogLlContent);
-        view = LayoutInflater.from(context).inflate(layoutResID(), null);
+        view = LayoutInflater.from(context).inflate(layoutResId(), null);
         baseDialogLlContent.addView(view);
         // 根视图
         final View rootView = findViewById(R.id.baseDialogRl);
@@ -67,12 +67,12 @@ public abstract class BaseDialog extends Dialog {
      *
      * @return 布局资源 ID
      */
-    protected abstract int layoutResID();
+    protected abstract int layoutResId();
 
     /**
      * 初始控件
      */
-    protected abstract void stepUI();
+    protected abstract void stepUi();
 
     /**
      * 设置监听

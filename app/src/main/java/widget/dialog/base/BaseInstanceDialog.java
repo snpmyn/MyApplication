@@ -15,7 +15,7 @@ import java.util.List;
  * 继承{@link BaseInstanceDialog}实现对话框，关闭时调{{@link #handle(Class)}}。
  */
 public abstract class BaseInstanceDialog extends BaseDialog {
-    private static List<BaseInstanceDialog> currentBaseInstanceDialogs = new ArrayList<>();
+    private static final List<BaseInstanceDialog> CURRENT_BASE_INSTANCE_DIALOGS = new ArrayList<>();
 
     /**
      * constructor
@@ -36,7 +36,7 @@ public abstract class BaseInstanceDialog extends BaseDialog {
      * @return 当前对话框
      */
     private static BaseInstanceDialog getCurrentDialog(Class<?> c) {
-        for (BaseInstanceDialog baseInstanceDialog : currentBaseInstanceDialogs) {
+        for (BaseInstanceDialog baseInstanceDialog : CURRENT_BASE_INSTANCE_DIALOGS) {
             if (baseInstanceDialog.getClass() == c) {
                 return baseInstanceDialog;
             }
@@ -49,14 +49,14 @@ public abstract class BaseInstanceDialog extends BaseDialog {
      */
     private void setCurrentDialog() {
         BaseInstanceDialog baseInstanceDialog;
-        for (int i = 0; i < currentBaseInstanceDialogs.size(); i++) {
-            baseInstanceDialog = currentBaseInstanceDialogs.get(i);
+        for (int i = 0; i < CURRENT_BASE_INSTANCE_DIALOGS.size(); i++) {
+            baseInstanceDialog = CURRENT_BASE_INSTANCE_DIALOGS.get(i);
             if (baseInstanceDialog.getClass() == this.getClass()) {
-                currentBaseInstanceDialogs.remove(baseInstanceDialog);
+                CURRENT_BASE_INSTANCE_DIALOGS.remove(baseInstanceDialog);
                 i--;
             }
         }
-        currentBaseInstanceDialogs.add(this);
+        CURRENT_BASE_INSTANCE_DIALOGS.add(this);
     }
 
     /**
@@ -71,7 +71,7 @@ public abstract class BaseInstanceDialog extends BaseDialog {
                 if (baseInstanceDialog.isShowing()) {
                     baseInstanceDialog.dismiss();
                 }
-                currentBaseInstanceDialogs.remove(baseInstanceDialog);
+                CURRENT_BASE_INSTANCE_DIALOGS.remove(baseInstanceDialog);
             }
         } catch (Exception e) {
             e.printStackTrace();

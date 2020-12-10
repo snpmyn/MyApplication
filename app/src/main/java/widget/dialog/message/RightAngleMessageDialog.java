@@ -45,7 +45,7 @@ public class RightAngleMessageDialog extends BaseInstanceDialog {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.dialog_right_angle_message;
     }
 
@@ -53,7 +53,7 @@ public class RightAngleMessageDialog extends BaseInstanceDialog {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         rightAngleMessageDialogTvTitle = view.findViewById(R.id.rightAngleMessageDialogTvTitle);
         rightAngleMessageDialogTvContent = view.findViewById(R.id.rightAngleMessageDialogTvContent);
         rightAngleMessageDialogBtnLeft = view.findViewById(R.id.rightAngleMessageDialogBtnLeft);

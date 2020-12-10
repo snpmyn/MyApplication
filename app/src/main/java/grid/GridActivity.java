@@ -27,7 +27,7 @@ public class GridActivity extends BaseActivity {
      * @return 布局资源 ID
      */
     @Override
-    protected int layoutResID() {
+    protected int layoutResId() {
         return R.layout.activity_grid;
     }
 
@@ -35,7 +35,7 @@ public class GridActivity extends BaseActivity {
      * 初始控件
      */
     @Override
-    protected void stepUI() {
+    protected void stepUi() {
         gridActivityHgv = findViewById(R.id.gridActivityHgv);
     }
 

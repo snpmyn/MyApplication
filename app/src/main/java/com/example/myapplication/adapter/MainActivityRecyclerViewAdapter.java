@@ -41,8 +41,8 @@ public class MainActivityRecyclerViewAdapter extends BaseRecyclerViewAdapter<Mai
     }
 
     class MainActivityViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder {
-        private TextView mainActivityItemTv;
-        private ImageView mainActivityItemIv;
+        private final TextView mainActivityItemTv;
+        private final ImageView mainActivityItemIv;
 
         MainActivityViewHolder(@NonNull View itemView) {
             super(itemView);

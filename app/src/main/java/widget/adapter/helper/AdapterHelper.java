@@ -28,9 +28,9 @@ public class AdapterHelper {
      * @param <T> <T>
      */
     public static class ItemChildViewClick<T> implements View.OnClickListener {
-        private int position;
-        private T item;
-        private OnItemChildViewClickListener<T> onItemChildViewClickListener;
+        private final int position;
+        private final T item;
+        private final OnItemChildViewClickListener<T> onItemChildViewClickListener;
 
         ItemChildViewClick(int position, T item, OnItemChildViewClickListener<T> onItemChildViewClickListener) {
             this.position = position;
