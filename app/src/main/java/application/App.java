@@ -18,7 +18,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        // 初始配置
+        // 初始化配置
         initConfiguration();
     }
 
@@ -27,7 +27,7 @@ public class App extends Application {
     }
 
     /**
-     * 初始配置
+     * 初始化配置
      */
     private void initConfiguration() {
         // 日志工具类初始配置
