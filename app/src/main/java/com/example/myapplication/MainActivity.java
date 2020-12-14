@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainActivityRv.addItemDecoration(new HorizontalDividerDecoration
                 .Builder(this)
                 .colorResId(R.color.colorPrimary)
-                .size(getResources().getDimensionPixelSize(R.dimen.px_1))
+                .size(getResources().getDimensionPixelSize(R.dimen.px1))
                 .margin(12)
                 .margin(12, 12)
                 .marginDimen(R.dimen.dp_12)
@@ -106,7 +106,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainActivityRv.addItemDecoration(new VerticalDividerDecoration
                 .Builder(this)
                 .colorResId(R.color.colorPrimary)
-                .size(getResources().getDimensionPixelSize(R.dimen.px_1))
+                .size(getResources().getDimensionPixelSize(R.dimen.px1))
                 .margin(12)
                 .margin(12, 12)
                 .marginDimen(R.dimen.dp_12)

@@ -36,7 +36,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_1"
+        android:layout_height="@dimen/px1"
         android:background="@color/gray" />
 
     <LinearLayout
@@ -57,7 +57,7 @@
             tools:text="取消" />
 
         <View
-            android:layout_width="@dimen/px_1"
+            android:layout_width="@dimen/px1"
             android:layout_height="match_parent"
             android:background="@color/gray" />
 
