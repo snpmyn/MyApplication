@@ -4,13 +4,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.fairy.utils.property.PropertyUtils;
 import com.example.myapplication.R;
 
 import java.util.List;
 import java.util.Properties;
 
 import base.BaseActivity;
-import utils.property.PropertyUtils;
 
 /**
  * @desc: 属性页

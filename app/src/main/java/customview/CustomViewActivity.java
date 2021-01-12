@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fairy.utils.intent.IntentUtils;
 import com.example.myapplication.R;
 
 import base.BaseActivity;
@@ -15,7 +16,6 @@ import customview.path.PathActivity;
 import customview.point.PointActivity;
 import customview.rect.RectActivity;
 import customview.text.TextActivity;
-import utils.intent.IntentUtils;
 
 /**
  * @desc: 自定义 VIEW 页

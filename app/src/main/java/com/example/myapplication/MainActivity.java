@@ -1,9 +1,7 @@
 package com.example.myapplication;
 
 import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,6 +13,14 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fairy.utils.intent.IntentUtils;
+import com.example.fairy.utils.listener.AppListener;
+import com.example.fairy.widget.adapter.decoration.HorizontalDividerDecoration;
+import com.example.fairy.widget.adapter.decoration.VerticalDividerDecoration;
+import com.example.fairy.widget.adapter.listener.OnItemClickListener;
+import com.example.fairy.widget.dialog.message.RoundCornerMessageDialog;
+import com.example.fairy.widget.listview.MeasuredListView;
+import com.example.fairy.widget.toast.ToastKit;
 import com.example.myapplication.adapter.MainActivityListViewAdapter;
 import com.example.myapplication.adapter.MainActivityRecyclerViewAdapter;
 import com.example.myapplication.module.MainActivityModule;
@@ -29,18 +35,8 @@ import grid.GridActivity;
 import image.ImageActivity;
 import property.PropertyActivity;
 import value.Magic;
-import widget.adapter.helper.AdapterHelper;
-import widget.adapter.decoration.HorizontalDividerDecoration;
-import widget.adapter.decoration.VerticalDividerDecoration;
-import widget.adapter.listener.OnItemClickListener;
-import widget.dialog.message.RoundCornerMessageDialog;
-import widget.dialog.message.listener.OnRoundCornerMessageDialogButtonClickListener;
 import mvp.MvpActivity;
 import toast.ToastActivity;
-import widget.listview.MeasuredListView;
-import widget.toast.ToastKit;
-import utils.intent.IntentUtils;
-import utils.listener.AppListener;
 
 /**
  * @desc: 主页
@@ -141,26 +137,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mainActivityBtn.setOnClickListener(this);
         mainActivityMlv.setOnItemClickListener(this);
         // 适配器
-        mainActivityListViewAdapter.setOnItemChildViewClickListener(new AdapterHelper.OnItemChildViewClickListener<MainActivityModule>() {
-            @Override
-            public void onItemChildViewClick(int position, MainActivityModule item, View childView) {
-                ToastKit.showLong((mainActivityListViewAdapter.itemIsVisible(mainActivityMlv, position) ? "可见" : "不可见") + " || " + item.getCommentate());
-            }
-        });
+        mainActivityListViewAdapter.setOnItemChildViewClickListener((position, item, childView) -> ToastKit.showLong((mainActivityListViewAdapter.itemIsVisible(mainActivityMlv, position) ? "可见" : "不可见") + " || " + item.getCommentate()));
         mainActivityRecyclerViewAdapter.setOnItemClickListener(this);
-        mainActivityRecyclerViewAdapter.setOnItemChildViewClickListener(new AdapterHelper.OnItemChildViewClickListener<MainActivityModule>() {
-            @Override
-            public void onItemChildViewClick(int position, MainActivityModule item, View childView) {
-                ToastKit.showLong((mainActivityListViewAdapter.itemIsVisible(mainActivityMlv, position) ? "可见" : "不可见") + " || " + item.getCommentate());
-            }
-        });
+        mainActivityRecyclerViewAdapter.setOnItemChildViewClickListener((position, item, childView) -> ToastKit.showLong((mainActivityListViewAdapter.itemIsVisible(mainActivityMlv, position) ? "可见" : "不可见") + " || " + item.getCommentate()));
         // 注册回调
-        AppListener.getInstance().registerCallback(new AppListener.Callback() {
-            @Override
-            public void onStateChange(boolean areForeground) {
-                ToastKit.showShort(areForeground ? "来到前台" : "进入后台");
-            }
-        });
+        AppListener.getInstance().registerCallback(areForeground -> ToastKit.showShort(areForeground ? "来到前台" : "进入后台"));
     }
 
     /**
@@ -201,7 +182,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -215,18 +195,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     .setContentHorizontalCenter()
                     .setLeftButtonText("cancel")
                     .setRightButtonText("ensure")
-                    .setOnRoundCornerMessageDialogLeftButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                        @Override
-                        public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                            roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        }
-                    })
-                    .setOnRoundCornerMessageDialogRightButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                        @Override
-                        public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                            roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        }
-                    }).build();
+                    .setOnRoundCornerMessageDialogLeftButtonClickListener((view, roundCornerMessageDialog1) -> roundCornerMessageDialog1.handle(roundCornerMessageDialog1.getClass()))
+                    .setOnRoundCornerMessageDialogRightButtonClickListener((view, roundCornerMessageDialog12) -> roundCornerMessageDialog12.handle(roundCornerMessageDialog12.getClass())).build();
             roundCornerMessageDialog.setCancelable(false);
             roundCornerMessageDialog.show();
         }

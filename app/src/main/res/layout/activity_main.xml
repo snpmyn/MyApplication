@@ -7,7 +7,7 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
-    <widget.listview.MeasuredListView
+    <com.example.fairy.widget.listview.MeasuredListView
         android:id="@+id/mainActivityMlv"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"

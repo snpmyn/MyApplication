@@ -8,10 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.fairy.widget.adapter.BaseRecyclerViewAdapter;
 import com.example.myapplication.R;
 import com.example.myapplication.module.MainActivityModule;
-
-import widget.adapter.BaseRecyclerViewAdapter;
 
 /**
  * Created on 2020-09-21

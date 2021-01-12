@@ -1,9 +1,7 @@
 package application;
 
-import android.app.Application;
-
-import utils.listener.AppListener;
-import utils.log.LogUtils;
+import com.example.fairy.utils.listener.AppListener;
+import com.example.fairy.utils.log.LogUtils;
 
 /**
  * Created on 2020-09-09
@@ -11,19 +9,12 @@ import utils.log.LogUtils;
  * @author zsp
  * @desc 应用
  */
-public class App extends Application {
-    private static Application instance;
-
+public class App extends com.example.fairy.app.App {
     @Override
     public void onCreate() {
         super.onCreate();
-        instance = this;
         // 初始化配置
         initConfiguration();
-    }
-
-    public static Application getInstance() {
-        return instance;
     }
 
     /**

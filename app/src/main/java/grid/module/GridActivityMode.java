@@ -2,7 +2,7 @@ package grid.module;
 
 import androidx.annotation.DrawableRes;
 
-import widget.grid.IGrid;
+import com.example.fairy.widget.grid.IGrid;
 
 /**
  * Created on 2020-09-23

@@ -7,10 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fairy.widget.adapter.BaseListViewAdapter;
 import com.example.myapplication.R;
 import com.example.myapplication.module.MainActivityModule;
-
-import widget.adapter.BaseListViewAdapter;
 
 /**
  * Created on 2020-09-18

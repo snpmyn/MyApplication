@@ -1,5 +1,7 @@
 package grid;
 
+import com.example.fairy.widget.grid.HorizontalGridView;
+import com.example.fairy.widget.toast.ToastKit;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
@@ -7,10 +9,6 @@ import java.util.List;
 
 import base.BaseActivity;
 import grid.module.GridActivityMode;
-import widget.grid.HorizontalGridView;
-import widget.grid.OnItemChildViewClickListener;
-import widget.grid.OnItemClickListener;
-import widget.toast.ToastKit;
 
 /**
  * @desc: 网格页
@@ -54,18 +52,8 @@ public class GridActivity extends BaseActivity {
      */
     @Override
     protected void setListener() {
-        gridActivityHgv.setOnItemClickListener(new OnItemClickListener<GridActivityMode>() {
-            @Override
-            public void onItemClick(GridActivityMode grid, int position) {
-                ToastKit.showShort(grid.getId() + "||" + grid.getTitle() + "||" + grid.getDescription());
-            }
-        });
-        gridActivityHgv.setOnItemChildViewClickListener(new OnItemChildViewClickListener<GridActivityMode>() {
-            @Override
-            public void onItemChildViewClick(GridActivityMode grid, int position) {
-                ToastKit.showShort(grid.getTitle() + " 子视图点击");
-            }
-        });
+        gridActivityHgv.setOnItemClickListener((grid, position) -> ToastKit.showShort(grid.getId() + "||" + grid.getTitle() + "||" + grid.getDescription()));
+        gridActivityHgv.setOnItemChildViewClickListener((grid, position) -> ToastKit.showShort(grid.getTitle() + " 子视图点击"));
     }
 
     /**

@@ -3,15 +3,12 @@ package toast;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fairy.utils.window.SystemAlertWindowUtils;
+import com.example.fairy.widget.toast.ToastKit;
+import com.example.fairy.widget.toast.WindowHeadToast;
 import com.example.myapplication.R;
 
-import java.util.Map;
-
 import base.BaseActivity;
-import widget.toast.ToastKit;
-import widget.toast.WindowHeadToast;
-import widget.toast.listener.OnViewClickListener;
-import utils.window.SystemAlertWindowUtils;
 
 /**
  * @desc: 吐司页
@@ -84,12 +81,9 @@ public class ToastActivity extends BaseActivity implements View.OnClickListener 
     private void pop() {
         if (SystemAlertWindowUtils.getInstance().execute(this)) {
             final WindowHeadToast windowHeadToast = new WindowHeadToast(this, "我的客服", "您收到一条新消息", null);
-            windowHeadToast.setOnViewClickListener(new OnViewClickListener() {
-                @Override
-                public void onViewClick(Map<String, String> extraMap) {
-                    ToastKit.showShort("点击");
-                    windowHeadToast.dismiss();
-                }
+            windowHeadToast.setOnViewClickListener(extraMap -> {
+                ToastKit.showShort("点击");
+                windowHeadToast.dismiss();
             });
             windowHeadToast.show();
         }

@@ -7,21 +7,16 @@ import android.widget.Button;
 
 import androidx.core.content.ContextCompat;
 
+import com.example.fairy.utils.data.CaesarCipherUtils;
+import com.example.fairy.utils.sign.SignUtils;
+import com.example.fairy.widget.dialog.loading.CanCancelLoadingDialog;
+import com.example.fairy.widget.dialog.loading.CommonLoadingDialog;
+import com.example.fairy.widget.dialog.message.RightAngleMessageDialog;
+import com.example.fairy.widget.dialog.message.RoundCornerMessageDialog;
+import com.example.fairy.widget.toast.ToastKit;
 import com.example.myapplication.R;
 
 import base.BaseActivity;
-import widget.dialog.loading.CanCancelLoadingDialog;
-import widget.dialog.loading.CommonLoadingDialog;
-import widget.dialog.loading.listener.OnBackPressedListener;
-import widget.dialog.loading.listener.OnClickToCloseListener;
-import widget.dialog.loading.listener.OnDialogCloseListener;
-import widget.dialog.message.RightAngleMessageDialog;
-import widget.dialog.message.RoundCornerMessageDialog;
-import widget.dialog.message.listener.OnRightAngleMessageDialogButtonClickListener;
-import widget.dialog.message.listener.OnRoundCornerMessageDialogButtonClickListener;
-import widget.toast.ToastKit;
-import utils.data.CaesarCipherUtils;
-import utils.sign.SignUtils;
 
 /**
  * @desc: 对话框页
@@ -142,20 +137,14 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setLeftButtonText("取消")
                 .setRightButtonText("确定")
                 .setLeftButtonDefaultSelect()
-                .setOnRightAngleMessageDialogLeftButtonClickListener(new OnRightAngleMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RightAngleMessageDialog rightAngleMessageDialog) {
-                        rightAngleMessageDialog.handle(rightAngleMessageDialog.getClass());
-                        ToastKit.showShort("取消");
-                    }
+                .setOnRightAngleMessageDialogLeftButtonClickListener((view, rightAngleMessageDialog1) -> {
+                    rightAngleMessageDialog1.handle(rightAngleMessageDialog1.getClass());
+                    ToastKit.showShort("取消");
                 })
-                .setOnRightAngleMessageDialogRightButtonClickListener(new OnRightAngleMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RightAngleMessageDialog rightAngleMessageDialog) {
-                        rightAngleMessageDialog.handle(rightAngleMessageDialog.getClass());
-                        ToastKit.showShortWithGravity(CaesarCipherUtils.encrypt("确定", 10) + "||"
-                                + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("确定", 10), 10), Gravity.CENTER_VERTICAL);
-                    }
+                .setOnRightAngleMessageDialogRightButtonClickListener((view, rightAngleMessageDialog12) -> {
+                    rightAngleMessageDialog12.handle(rightAngleMessageDialog12.getClass());
+                    ToastKit.showShortWithGravity(CaesarCipherUtils.encrypt("确定", 10) + "||"
+                            + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("确定", 10), 10), Gravity.CENTER_VERTICAL);
                 }).build();
         rightAngleMessageDialog.show();
     }
@@ -173,20 +162,14 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setLeftButtonText("cancel")
                 .setRightButtonText("ensure")
                 .setRightButtonDefaultSelect()
-                .setOnRightAngleMessageDialogLeftButtonClickListener(new OnRightAngleMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RightAngleMessageDialog rightAngleMessageDialog) {
-                        rightAngleMessageDialog.handle(rightAngleMessageDialog.getClass());
-                        ToastKit.showLong("cancel");
-                    }
+                .setOnRightAngleMessageDialogLeftButtonClickListener((view, rightAngleMessageDialog1) -> {
+                    rightAngleMessageDialog1.handle(rightAngleMessageDialog1.getClass());
+                    ToastKit.showLong("cancel");
                 })
-                .setOnRightAngleMessageDialogRightButtonClickListener(new OnRightAngleMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RightAngleMessageDialog rightAngleMessageDialog) {
-                        rightAngleMessageDialog.handle(rightAngleMessageDialog.getClass());
-                        ToastKit.showLongWithGravity(CaesarCipherUtils.encrypt("ensure", 10) + "||"
-                                + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("ensure", 10), 10), Gravity.CENTER_VERTICAL);
-                    }
+                .setOnRightAngleMessageDialogRightButtonClickListener((view, rightAngleMessageDialog12) -> {
+                    rightAngleMessageDialog12.handle(rightAngleMessageDialog12.getClass());
+                    ToastKit.showLongWithGravity(CaesarCipherUtils.encrypt("ensure", 10) + "||"
+                            + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("ensure", 10), 10), Gravity.CENTER_VERTICAL);
                 }).build();
         rightAngleMessageDialog.show();
     }
@@ -204,20 +187,14 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setLeftButtonText("取消")
                 .setRightButtonText("确定")
                 .setLeftButtonDefaultSelect()
-                .setOnRoundCornerMessageDialogLeftButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        ToastKit.showShort("取消");
-                    }
+                .setOnRoundCornerMessageDialogLeftButtonClickListener((view, roundCornerMessageDialog1) -> {
+                    roundCornerMessageDialog1.handle(roundCornerMessageDialog1.getClass());
+                    ToastKit.showShort("取消");
                 })
-                .setOnRoundCornerMessageDialogRightButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        ToastKit.showShort(CaesarCipherUtils.encrypt("确定", 10) + "||"
-                                + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("确定", 10), 10));
-                    }
+                .setOnRoundCornerMessageDialogRightButtonClickListener((view, roundCornerMessageDialog12) -> {
+                    roundCornerMessageDialog12.handle(roundCornerMessageDialog12.getClass());
+                    ToastKit.showShort(CaesarCipherUtils.encrypt("确定", 10) + "||"
+                            + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("确定", 10), 10));
                 }).build();
         roundCornerMessageDialog.show();
     }
@@ -235,20 +212,14 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setLeftButtonText("cancel")
                 .setRightButtonText("ensure")
                 .setRightButtonDefaultSelect()
-                .setOnRoundCornerMessageDialogLeftButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        ToastKit.showShort("cancel");
-                    }
+                .setOnRoundCornerMessageDialogLeftButtonClickListener((view, roundCornerMessageDialog1) -> {
+                    roundCornerMessageDialog1.handle(roundCornerMessageDialog1.getClass());
+                    ToastKit.showShort("cancel");
                 })
-                .setOnRoundCornerMessageDialogRightButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        ToastKit.showShort(CaesarCipherUtils.encrypt("ensure", 10) + "||"
-                                + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("ensure", 10), 10));
-                    }
+                .setOnRoundCornerMessageDialogRightButtonClickListener((view, roundCornerMessageDialog12) -> {
+                    roundCornerMessageDialog12.handle(roundCornerMessageDialog12.getClass());
+                    ToastKit.showShort(CaesarCipherUtils.encrypt("ensure", 10) + "||"
+                            + CaesarCipherUtils.decrypt(CaesarCipherUtils.encrypt("ensure", 10), 10));
                 }).build();
         roundCornerMessageDialog.setCancelable(false);
         roundCornerMessageDialog.show();
@@ -260,13 +231,8 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
     private void commonLoadingDialog() {
         CommonLoadingDialog commonLoadingDialog = new CommonLoadingDialog.Builder(this, 0)
                 .setHint("加载中")
-                .setOnBackPressedListener(new OnBackPressedListener() {
-                    @Override
-                    public void backPressed() {
-                        ToastKit.showShort(SignUtils.getSignMd5Hex(DialogActivity.this, "com.example.myapplication") + "||" +
-                                SignUtils.getSignSha256Hex(DialogActivity.this, "com.example.myapplication"));
-                    }
-                }).build();
+                .setOnBackPressedListener(() -> ToastKit.showShort(SignUtils.getSignMd5Hex(DialogActivity.this, "com.example.myapplication") + "||" +
+                        SignUtils.getSignSha256Hex(DialogActivity.this, "com.example.myapplication"))).build();
         commonLoadingDialog.show();
     }
 
@@ -276,24 +242,9 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
     private void canCancelLoadingDialog() {
         CanCancelLoadingDialog canCancelLoadingDialog = new CanCancelLoadingDialog.Builder(this, 0)
                 .setHint("加载中")
-                .setOnClickToCloseListener(new OnClickToCloseListener() {
-                    @Override
-                    public void clickToClose() {
-                        ToastKit.showShort("clickToClose");
-                    }
-                })
-                .setOnDialogCloseListener(new OnDialogCloseListener() {
-                    @Override
-                    public void dialogClose() {
-                        ToastKit.showShort("dialogClose");
-                    }
-                })
-                .setOnBackPressedListener(new OnBackPressedListener() {
-                    @Override
-                    public void backPressed() {
-                        ToastKit.showShort("backPressed");
-                    }
-                }).build();
+                .setOnClickToCloseListener(() -> ToastKit.showShort("clickToClose"))
+                .setOnDialogCloseListener(() -> ToastKit.showShort("dialogClose"))
+                .setOnBackPressedListener(() -> ToastKit.showShort("backPressed")).build();
         canCancelLoadingDialog.setCancelable(false);
         canCancelLoadingDialog.show();
     }

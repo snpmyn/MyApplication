@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="grid.GridActivity">
 
-    <widget.grid.HorizontalGridView
+    <com.example.fairy.widget.grid.HorizontalGridView
         android:id="@+id/gridActivityHgv"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"

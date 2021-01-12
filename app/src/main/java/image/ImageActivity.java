@@ -5,12 +5,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.fairy.utils.image.DrawableUtils;
+import com.example.fairy.utils.view.ViewUtils;
+import com.example.fairy.widget.toast.ToastKit;
 import com.example.myapplication.R;
 
 import base.BaseActivity;
-import utils.image.DrawableUtils;
-import utils.view.ViewUtils;
-import widget.toast.ToastKit;
 
 /**
  * @desc: 图像页
@@ -56,12 +56,7 @@ public class ImageActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void setListener() {
         ViewUtils viewUtils = new ViewUtils();
-        viewUtils.doubleClickCheck(imageActivityIv, new ViewUtils.OnDoubleClickListener() {
-            @Override
-            public void onDoubleClick() {
-                ToastKit.showShort("双重点击");
-            }
-        });
+        viewUtils.doubleClickCheck(imageActivityIv, () -> ToastKit.showShort("双重点击"));
         imageActivityBtnLocalLoad.setOnClickListener(this);
         imageActivityBtnNetworkLoad.setOnClickListener(this);
     }

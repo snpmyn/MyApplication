@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -18,12 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="grid.GridActivity" />
-        <activity android:name="image.ImageActivity" />
-        <activity android:name="property.PropertyActivity" />
-        <activity android:name="mvp.MvpActivity" />
-        <activity android:name="toast.ToastActivity" />
-        <activity android:name="dialog.DialogActivity" />
+        <activity
+            android:name="grid.GridActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="image.ImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="property.PropertyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mvp.MvpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="toast.ToastActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="dialog.DialogActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="customview.path.PathActivity"
             android:screenOrientation="portrait" />

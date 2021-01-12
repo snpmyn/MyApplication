@@ -1,1 +1,2 @@
+include ':fairy'
 include ':app'
