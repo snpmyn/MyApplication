@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import com.example.fairy.utils.log.LogUtils;
 import com.example.fairy.widget.toast.ToastKit;
 
-import static com.example.fairy.value.Magic.*;
+import static com.example.fairy.value.MyApplicationFairyMagic.*;
 
 /**
  * Created on 2020-09-09

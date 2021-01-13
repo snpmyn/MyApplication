@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.fairy.utils.log.LogUtils;
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 
 /**
  * Created on 2020-09-09
@@ -54,7 +54,7 @@ public class CommonToast extends Toast {
         @Override
         public String getOpPackageName() {
             StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-            if (stackTraceElements[Magic.INT_THREE].getClassName().equals(Toast.class.getName()) && Magic.STRING_SHOW.equals(stackTraceElements[Magic.INT_THREE].getMethodName())) {
+            if (stackTraceElements[MyApplicationFairyMagic.INT_THREE].getClassName().equals(Toast.class.getName()) && MyApplicationFairyMagic.STRING_SHOW.equals(stackTraceElements[MyApplicationFairyMagic.INT_THREE].getMethodName())) {
                 return "android";
             }
             return getPackageName();

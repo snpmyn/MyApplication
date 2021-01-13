@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.fairy.R;
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 import com.example.fairy.widget.toast.listener.OnViewClickListener;
 
 import java.util.Map;
@@ -193,13 +193,13 @@ public class WindowHeadToast implements View.OnTouchListener {
             case MotionEvent.ACTION_MOVE:
                 int currentX = (int) event.getRawX();
                 int currentY = (int) event.getRawY();
-                if (Math.abs(currentX - downX) > Magic.INT_FIFTY || Math.abs(currentY - downY) > Magic.INT_FORTY) {
+                if (Math.abs(currentX - downX) > MyApplicationFairyMagic.INT_FIFTY || Math.abs(currentY - downY) > MyApplicationFairyMagic.INT_FORTY) {
                     animationDismiss();
                 }
                 break;
             case MotionEvent.ACTION_UP:
                 // 到一定比例后松开手指关闭
-                if (Math.abs(linearLayout.getTranslationY()) > linearLayout.getMeasuredHeight() / Magic.FLOAT_ONE_DOT_FIVE) {
+                if (Math.abs(linearLayout.getTranslationY()) > linearLayout.getMeasuredHeight() / MyApplicationFairyMagic.FLOAT_ONE_DOT_FIVE) {
                     animationDismiss();
                 } else {
                     linearLayout.setTranslationY(0);

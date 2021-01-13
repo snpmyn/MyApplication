@@ -1,5 +1,6 @@
 package application;
 
+import com.example.fairy.app.MyApplicationFairyApp;
 import com.example.fairy.utils.listener.AppListener;
 import com.example.fairy.utils.log.LogUtils;
 
@@ -9,7 +10,7 @@ import com.example.fairy.utils.log.LogUtils;
  * @author zsp
  * @desc 应用
  */
-public class App extends com.example.fairy.app.App {
+public class MyApplicationApp extends MyApplicationFairyApp {
     @Override
     public void onCreate() {
         super.onCreate();

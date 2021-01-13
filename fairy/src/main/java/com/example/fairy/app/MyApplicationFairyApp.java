@@ -8,7 +8,7 @@ import android.app.Application;
  * @author zsp
  * @desc 应用
  */
-public class App extends Application {
+public class MyApplicationFairyApp extends Application {
     private static Application instance;
 
     /**

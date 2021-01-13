@@ -12,7 +12,7 @@ import android.provider.Settings;
 import java.lang.reflect.Method;
 
 import com.example.fairy.utils.log.LogUtils;
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 import com.example.fairy.widget.toast.ToastKit;
 
 /**
@@ -32,7 +32,7 @@ public class XiaoMiUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= Magic.INT_NINETEEN) {
+        if (version >= MyApplicationFairyMagic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);
@@ -54,13 +54,13 @@ public class XiaoMiUtils {
      */
     public static void requestPermission(Context context) {
         int versionCode = RomUtils.getMiuiVersion();
-        if (versionCode == Magic.INT_FIVE) {
+        if (versionCode == MyApplicationFairyMagic.INT_FIVE) {
             goToMiuiPermissionActivityOnV5(context);
-        } else if (versionCode == Magic.INT_SIX) {
+        } else if (versionCode == MyApplicationFairyMagic.INT_SIX) {
             goToMiuiPermissionActivityOnV6(context);
-        } else if (versionCode == Magic.INT_SEVEN) {
+        } else if (versionCode == MyApplicationFairyMagic.INT_SEVEN) {
             goToMiuiPermissionActivityOnV7(context);
-        } else if (versionCode == Magic.INT_EIGHT) {
+        } else if (versionCode == MyApplicationFairyMagic.INT_EIGHT) {
             goToMiuiPermissionActivityOnV8(context);
         } else {
             LogUtils.d(TAG, "this is a special MIUI rom version, its version code " + versionCode);

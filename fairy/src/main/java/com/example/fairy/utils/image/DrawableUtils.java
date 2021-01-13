@@ -1,6 +1,6 @@
 package com.example.fairy.utils.image;
 
-import com.example.fairy.app.App;
+import com.example.fairy.app.MyApplicationFairyApp;
 import com.example.fairy.utils.log.LogUtils;
 
 /**
@@ -19,7 +19,7 @@ public class DrawableUtils {
      */
     public static int getDrawableResIdByName(String name, int defaultResId) {
         try {
-            int drawableResId = App.getInstance().getResources().getIdentifier(name, "drawable", App.getInstance().getPackageName());
+            int drawableResId = MyApplicationFairyApp.getInstance().getResources().getIdentifier(name, "drawable", MyApplicationFairyApp.getInstance().getPackageName());
             return drawableResId > 0 ? drawableResId : defaultResId;
         } catch (Exception e) {
             LogUtils.exception(e);

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.fairy.utils.intent.IntentUtils;
+import com.example.fairy.utils.intent.IntentJump;
 import com.example.myapplication.R;
 
 import base.BaseActivity;
@@ -102,35 +102,35 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
         switch (view.getId()) {
             // 圆
             case R.id.mainActivityBtnCircle:
-                IntentUtils.getInstance().jump(this, CircleActivity.class);
+                IntentJump.getInstance().jump(null, this, CircleActivity.class);
                 break;
             // 线
             case R.id.mainActivityBtnLine:
-                IntentUtils.getInstance().jump(this, LineActivity.class);
+                IntentJump.getInstance().jump(null, this, LineActivity.class);
                 break;
             // 矩形
             case R.id.mainActivityBtnRect:
-                IntentUtils.getInstance().jump(this, RectActivity.class);
+                IntentJump.getInstance().jump(null, this, RectActivity.class);
                 break;
             // 点
             case R.id.mainActivityBtnPoint:
-                IntentUtils.getInstance().jump(this, PointActivity.class);
+                IntentJump.getInstance().jump(null, this, PointActivity.class);
                 break;
             // 椭圆
             case R.id.mainActivityBtnOval:
-                IntentUtils.getInstance().jump(this, OvalActivity.class);
+                IntentJump.getInstance().jump(null, this, OvalActivity.class);
                 break;
             // 文本
             case R.id.mainActivityBtnText:
-                IntentUtils.getInstance().jump(this, TextActivity.class);
+                IntentJump.getInstance().jump(null, this, TextActivity.class);
                 break;
             // 弧
             case R.id.mainActivityBtnArc:
-                IntentUtils.getInstance().jump(this, ArcActivity.class);
+                IntentJump.getInstance().jump(null, this, ArcActivity.class);
                 break;
             // 路径
             case R.id.mainActivityBtnPath:
-                IntentUtils.getInstance().jump(this, PathActivity.class);
+                IntentJump.getInstance().jump(null, this, PathActivity.class);
                 break;
             default:
                 break;

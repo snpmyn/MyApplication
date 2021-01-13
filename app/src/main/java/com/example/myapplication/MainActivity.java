@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fairy.utils.intent.IntentUtils;
+import com.example.fairy.utils.intent.IntentJump;
 import com.example.fairy.utils.listener.AppListener;
 import com.example.fairy.widget.adapter.decoration.HorizontalDividerDecoration;
 import com.example.fairy.widget.adapter.decoration.VerticalDividerDecoration;
@@ -34,7 +34,7 @@ import dialog.DialogActivity;
 import grid.GridActivity;
 import image.ImageActivity;
 import property.PropertyActivity;
-import value.Magic;
+import value.MyApplicationMagic;
 import mvp.MvpActivity;
 import toast.ToastActivity;
 
@@ -186,7 +186,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         // 小米机型无论授予权限否，shouldShowRequestPermissionRationale 都为 false。故需另加判断 grantResults[0] == -1。
-        if ((requestCode == Magic.INT_ZERO_X_ZERO_ONE) && (grantResults[0] == -1) && !shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+        if ((requestCode == MyApplicationMagic.INT_ZERO_X_ZERO_ONE) && (grantResults[0] == -1) && !shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
             RoundCornerMessageDialog roundCornerMessageDialog = new RoundCornerMessageDialog.Builder(this, 0)
                     .setTitle("权限")
                     .setTitleColor(ContextCompat.getColor(this, R.color.fontInput))
@@ -250,25 +250,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         String name = mainActivityModuleList.get(position).getName();
         switch (name) {
             case "自定义VIEW":
-                IntentUtils.getInstance().jump(this, CustomViewActivity.class);
+                IntentJump.getInstance().jump(null, this, CustomViewActivity.class);
                 break;
             case "对话框":
-                IntentUtils.getInstance().jump(this, DialogActivity.class);
+                IntentJump.getInstance().jump(null, this, DialogActivity.class);
                 break;
             case "吐司":
-                IntentUtils.getInstance().jump(this, ToastActivity.class);
+                IntentJump.getInstance().jump(null, this, ToastActivity.class);
                 break;
             case "MVP":
-                IntentUtils.getInstance().jump(this, MvpActivity.class);
+                IntentJump.getInstance().jump(null, this, MvpActivity.class);
                 break;
             case "属性":
-                IntentUtils.getInstance().jump(this, PropertyActivity.class);
+                IntentJump.getInstance().jump(null, this, PropertyActivity.class);
                 break;
             case "图像":
-                IntentUtils.getInstance().jump(this, ImageActivity.class);
+                IntentJump.getInstance().jump(null, this, ImageActivity.class);
                 break;
             case "网格":
-                IntentUtils.getInstance().jump(this, GridActivity.class);
+                IntentJump.getInstance().jump(null, this, GridActivity.class);
                 break;
             default:
                 break;

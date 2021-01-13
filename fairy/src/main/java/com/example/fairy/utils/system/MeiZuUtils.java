@@ -7,7 +7,7 @@ import android.os.Binder;
 import android.os.Build;
 
 import com.example.fairy.utils.log.LogUtils;
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 import com.example.fairy.widget.toast.ToastKit;
 
 import java.lang.reflect.Method;
@@ -27,7 +27,7 @@ public class MeiZuUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= Magic.INT_NINETEEN) {
+        if (version >= MyApplicationFairyMagic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);

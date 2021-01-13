@@ -2,7 +2,7 @@ package com.example.fairy.utils.data;
 
 import android.util.Base64;
 
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -139,25 +139,25 @@ public class CaesarCipherUtils {
      */
     private static char encrypt(char c, int offsetValue) {
         // 如果字符串中某字符是小写字母
-        if (c >= Magic.CHAR_SMALL_A && c <= Magic.CHAR_SMALL_Z) {
+        if (c >= MyApplicationFairyMagic.CHAR_SMALL_A && c <= MyApplicationFairyMagic.CHAR_SMALL_Z) {
             // 移动key%26位
             c += offsetValue % 26;
-            if (c < Magic.CHAR_SMALL_A) {
+            if (c < MyApplicationFairyMagic.CHAR_SMALL_A) {
                 // 向左超界
                 c += 26;
-            } else if (c > Magic.CHAR_SMALL_Z) {
+            } else if (c > MyApplicationFairyMagic.CHAR_SMALL_Z) {
                 // 向右超界
                 c -= 26;
             }
         }
         // 如果字符串中某字符是大写字母
-        else if (c >= Magic.CHAR_BIG_A && c <= Magic.CHAR_BIG_Z) {
+        else if (c >= MyApplicationFairyMagic.CHAR_BIG_A && c <= MyApplicationFairyMagic.CHAR_BIG_Z) {
             // 移动key%26位
             c += offsetValue % 26;
-            if (c < Magic.CHAR_BIG_A) {
+            if (c < MyApplicationFairyMagic.CHAR_BIG_A) {
                 // 向左超界
                 c += 26;
-            } else if (c > Magic.CHAR_BIG_Z) {
+            } else if (c > MyApplicationFairyMagic.CHAR_BIG_Z) {
                 // 向右超界
                 c -= 26;
             }

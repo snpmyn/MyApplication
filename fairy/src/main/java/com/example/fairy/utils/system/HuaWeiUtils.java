@@ -9,7 +9,7 @@ import android.os.Binder;
 import android.os.Build;
 
 import com.example.fairy.utils.log.LogUtils;
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 import com.example.fairy.widget.toast.ToastKit;
 
 import java.lang.reflect.Method;
@@ -29,7 +29,7 @@ public class HuaWeiUtils {
      */
     public static boolean checkSystemAlertWindowPermission(Context context) {
         final int version = Build.VERSION.SDK_INT;
-        if (version >= Magic.INT_NINETEEN) {
+        if (version >= MyApplicationFairyMagic.INT_NINETEEN) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
             try {
                 Method method = AppOpsManager.class.getDeclaredMethod("checkOp", int.class, int.class, String.class);
@@ -55,7 +55,7 @@ public class HuaWeiUtils {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             ComponentName componentName = new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.addviewmonitor.AddViewMonitorActivity");
             intent.setComponent(componentName);
-            if (RomUtils.getEmuiVersionCode() != Magic.FLOAT_THREE_DOT_ONE) {
+            if (RomUtils.getEmuiVersionCode() != MyApplicationFairyMagic.FLOAT_THREE_DOT_ONE) {
                 // 适配 ENUI 3.0
                 componentName = new ComponentName("com.huawei.systemmanager", "com.huawei.notificationmanager.ui.NotificationManagmentActivity");
                 intent.setComponent(componentName);

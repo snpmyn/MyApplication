@@ -3,10 +3,10 @@
     <color name="colorPrimary">#4E80F5</color>
     <color name="colorPrimaryDark">#4E80F5</color>
     <color name="colorAccent">#4E80F5</color>
-    <color name="background">#F3F6F8</color>
-    <color name="fontInput">#202323</color>
+    <color name="pageBackground">#F3F6F8</color>
     <color name="fontHint">#525454</color>
-    <color name="gray">#D8D8D8</color>
+    <color name="fontInput">#202323</color>
     <color name="transparent">#00000000</color>
+
     <color name="white">#fff</color>
 </resources>

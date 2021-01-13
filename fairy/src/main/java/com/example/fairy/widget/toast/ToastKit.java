@@ -2,7 +2,7 @@ package com.example.fairy.widget.toast;
 
 import android.widget.Toast;
 
-import com.example.fairy.app.App;
+import com.example.fairy.app.MyApplicationFairyApp;
 
 /**
  * Created on 2020-09-09
@@ -33,7 +33,7 @@ public class ToastKit {
         if (null != toast) {
             toast.cancel();
         }
-        toast = CommonToast.makeText(App.getInstance(), msg, time);
+        toast = CommonToast.makeText(MyApplicationFairyApp.getInstance(), msg, time);
         toast.show();
     }
 
@@ -41,7 +41,7 @@ public class ToastKit {
         if (null != toast) {
             toast.cancel();
         }
-        toast = CommonToast.makeText(App.getInstance(), msg, time);
+        toast = CommonToast.makeText(MyApplicationFairyApp.getInstance(), msg, time);
         toast.setGravity(gravity, 0, 0);
         toast.show();
     }

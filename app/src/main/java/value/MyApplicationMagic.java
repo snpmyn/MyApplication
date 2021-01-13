@@ -6,7 +6,7 @@ package value;
  * @author zsp
  * @desc 魔法值
  */
-public class Magic {
+public class MyApplicationMagic {
     /**
      * int
      */

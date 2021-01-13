@@ -2,7 +2,7 @@ package com.example.fairy.utils.view;
 
 import android.view.View;
 
-import com.example.fairy.value.Magic;
+import com.example.fairy.value.MyApplicationFairyMagic;
 
 /**
  * Created on 2020-09-15
@@ -33,7 +33,7 @@ public class ViewUtils {
     public void doubleClickCheck(View view, final OnDoubleClickListener onDoubleClickListener) {
         view.setOnClickListener(view1 -> {
             if (alreadyClick) {
-                if (((System.currentTimeMillis() - clickTime) < Magic.INT_TWO_HUNDRED) && null != onDoubleClickListener) {
+                if (((System.currentTimeMillis() - clickTime) < MyApplicationFairyMagic.INT_TWO_HUNDRED) && null != onDoubleClickListener) {
                     onDoubleClickListener.onDoubleClick();
                 }
                 alreadyClick = false;
