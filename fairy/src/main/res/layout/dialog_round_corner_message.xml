@@ -9,8 +9,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_12"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_24"
+        android:paddingRight="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_24">
 
         <TextView
             android:id="@+id/roundCornerMessageDialogTvTitle"
@@ -28,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:minHeight="@dimen/dp_66"
+            android:minHeight="@dimen/dp_44"
             android:textColor="@color/fontHint"
             android:textSize="@dimen/sp_14"
             tools:text="内容" />
@@ -49,7 +52,7 @@
             android:id="@+id/roundCornerMessageDialogBtnLeft"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_44"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/white_color_primary_solid_blr12_selector"
             android:textColor="@color/color_primary_white_color_selector"
@@ -65,7 +68,7 @@
             android:id="@+id/roundCornerMessageDialogBtnRight"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_44"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/white_color_primary_solid_brr12_selector"
             android:textColor="@color/color_primary_white_color_selector"
