@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.view.View;
 
+import com.example.fairy.R;
 import com.example.fairy.utils.system.QiHoo360Utils;
 import com.example.fairy.utils.system.XiaoMiUtils;
 import com.example.fairy.utils.system.HuaWeiUtils;
 import com.example.fairy.utils.system.MeiZuUtils;
 import com.example.fairy.utils.system.RomUtils;
 import com.example.fairy.widget.dialog.message.RoundCornerMessageDialog;
-import com.example.fairy.widget.dialog.message.listener.OnRoundCornerMessageDialogButtonClickListener;
 
 /**
  * Created on 2020-09-10
@@ -62,23 +61,17 @@ public class SystemAlertWindowUtils {
 
     private void dialogHint(final Context context) {
         RoundCornerMessageDialog roundCornerMessageDialog = new RoundCornerMessageDialog.Builder(context, 0)
-                .setContent("您的手机没有授予悬浮窗权限，请开启后再试")
+                .setContent(context.getString(R.string.openSuspensionWindowPermissionHint))
                 .setContentHorizontalCenter()
-                .setLeftButtonText("暂不开启")
-                .setRightButtonText("现在去开启")
-                .setOnRoundCornerMessageDialogLeftButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        handle(context, false);
-                    }
+                .setLeftButtonText(context.getString(R.string.waitNotToOpen))
+                .setRightButtonText(context.getString(R.string.nowToOpen))
+                .setOnRoundCornerMessageDialogLeftButtonClickListener((view, roundCornerMessageDialog1) -> {
+                    roundCornerMessageDialog1.handle(roundCornerMessageDialog1.getClass());
+                    handle(context, false);
                 })
-                .setOnRoundCornerMessageDialogRightButtonClickListener(new OnRoundCornerMessageDialogButtonClickListener() {
-                    @Override
-                    public void buttonClick(View view, RoundCornerMessageDialog roundCornerMessageDialog) {
-                        roundCornerMessageDialog.handle(roundCornerMessageDialog.getClass());
-                        handle(context, true);
-                    }
+                .setOnRoundCornerMessageDialogRightButtonClickListener((view, roundCornerMessageDialog12) -> {
+                    roundCornerMessageDialog12.handle(roundCornerMessageDialog12.getClass());
+                    handle(context, true);
                 }).build();
         roundCornerMessageDialog.setCancelable(false);
         roundCornerMessageDialog.show();
