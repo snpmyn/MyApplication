@@ -116,7 +116,7 @@ public class RoundCornerMessageDialog extends BaseInstanceDialog {
      * 设置内容水平居中
      */
     private void setContentHorizontalCenter() {
-        roundCornerMessageDialogTvContent.setGravity(Gravity.CENTER);
+        roundCornerMessageDialogTvContent.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**

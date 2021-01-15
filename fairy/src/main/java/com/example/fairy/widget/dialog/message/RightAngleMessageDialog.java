@@ -116,7 +116,7 @@ public class RightAngleMessageDialog extends BaseInstanceDialog {
      * 设置内容水平居中
      */
     private void setContentHorizontalCenter() {
-        rightAngleMessageDialogTvContent.setGravity(Gravity.CENTER);
+        rightAngleMessageDialogTvContent.setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
     /**

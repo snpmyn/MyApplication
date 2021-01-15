@@ -1,2 +1,1 @@
-include ':fairy'
-include ':app'
+include ':app', ':fairy'

@@ -83,7 +83,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.snpmyn.MyApplication:fairy:v0.0.1.1X'
+    implementation 'com.github.snpmyn.MyApplication:fairy:v0.0.1.2X'
 }
 ```
 
