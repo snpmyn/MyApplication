@@ -1,33 +1,36 @@
-package widget.customview.arc;
+package com.example.customview.text;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.example.customview.R;
+
 /**
- * Created on 2020/7/6.
+ * Created on 2020/7/3.
  *
  * @author zsp
- * @desc 弧
+ * @desc 文本
  */
-public class MyArc extends View {
+public class MyText extends View {
     private Paint paint;
 
-    public MyArc(Context context) {
+    public MyText(Context context) {
         super(context);
     }
 
-    public MyArc(Context context, @Nullable AttributeSet attrs) {
+    public MyText(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paint = new Paint();
     }
 
-    public MyArc(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -41,8 +44,9 @@ public class MyArc extends View {
         super.onDraw(canvas);
         paint.setAntiAlias(true);
         paint.setColor(Color.BLUE);
-        canvas.drawArc(Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
-                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(),
-                45.0f, 45.0f, true, paint);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTypeface(Typeface.DEFAULT_BOLD);
+        paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.sp_16));
+        canvas.drawText("你好，世界！", Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(), paint);
     }
 }

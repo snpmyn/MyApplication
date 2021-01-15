@@ -7,7 +7,7 @@
     android:background="@color/pageBackground"
     tools:context="customview.point.PointActivity">
 
-    <widget.customview.point.MyPoint
+    <com.example.customview.point.MyPoint
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,4 +1,4 @@
-package widget.customview.oval;
+package com.example.customview.circle;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,24 +10,24 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 /**
- * Created on 2020/7/3.
+ * Created on 2020/7/2.
  *
  * @author zsp
- * @desc 椭圆
+ * @desc 圆
  */
-public class MyOval extends View {
+public class MyCircle extends View {
     private Paint paint;
 
-    public MyOval(Context context) {
+    public MyCircle(Context context) {
         super(context);
     }
 
-    public MyOval(Context context, @Nullable AttributeSet attrs) {
+    public MyCircle(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paint = new Paint();
     }
 
-    public MyOval(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyCircle(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -41,7 +41,7 @@ public class MyOval extends View {
         super.onDraw(canvas);
         paint.setAntiAlias(true);
         paint.setColor(Color.RED);
-        canvas.drawOval(Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
-                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(), paint);
+        paint.setAlpha(20);
+        canvas.drawCircle(Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(), 240.0f, paint);
     }
 }

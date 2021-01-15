@@ -30,4 +30,6 @@ dependencies {
     /*自带*/
     implementation project(path: ':fairy')
     /*fairy*/
+    implementation project(path: ':customview')
+    /*CustomView*/
 }

@@ -7,7 +7,7 @@
     android:background="@color/pageBackground"
     tools:context="customview.circle.CircleActivity">
 
-    <widget.customview.circle.MyCircle
+    <com.example.customview.circle.MyCircle
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"

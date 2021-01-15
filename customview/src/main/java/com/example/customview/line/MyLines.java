@@ -1,4 +1,4 @@
-package widget.customview.line;
+package com.example.customview.line;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

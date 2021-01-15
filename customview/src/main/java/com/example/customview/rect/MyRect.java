@@ -1,4 +1,4 @@
-package widget.customview.circle;
+package com.example.customview.rect;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,21 +13,21 @@ import androidx.annotation.Nullable;
  * Created on 2020/7/2.
  *
  * @author zsp
- * @desc 圆
+ * @desc 矩形
  */
-public class MyCircle extends View {
+public class MyRect extends View {
     private Paint paint;
 
-    public MyCircle(Context context) {
+    public MyRect(Context context) {
         super(context);
     }
 
-    public MyCircle(Context context, @Nullable AttributeSet attrs) {
+    public MyRect(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paint = new Paint();
     }
 
-    public MyCircle(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyRect(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -40,8 +40,8 @@ public class MyCircle extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         paint.setAntiAlias(true);
-        paint.setColor(Color.RED);
-        paint.setAlpha(20);
-        canvas.drawCircle(Integer.valueOf(getWidth() / 2).floatValue(), Integer.valueOf(getHeight() / 2).floatValue(), 240.0f, paint);
+        paint.setColor(Color.CYAN);
+        canvas.drawRect(Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
+                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(), paint);
     }
 }

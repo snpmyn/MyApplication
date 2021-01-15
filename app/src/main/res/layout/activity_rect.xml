@@ -7,7 +7,7 @@
     android:background="@color/pageBackground"
     tools:context="customview.rect.RectActivity">
 
-    <widget.customview.rect.MyRect
+    <com.example.customview.rect.MyRect
         android:id="@+id/rectActivityMr"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <widget.customview.rect.MyRoundRect
+    <com.example.customview.rect.MyRoundRect
         android:id="@+id/rectActivityMrr"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"

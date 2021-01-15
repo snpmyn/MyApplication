@@ -16,7 +16,8 @@
 | 模块 | 说明 | 补充 |
 |:-:|:-:|:-:|
 | 示例app | 用法举例 | 无 |
-| 一方库fairy | 推送集成实现 | 无 |
+| 一方库fairy | 基础 | 无 |
+| 一方库customview | 自定义视图 | 无 |
 
 ### 依赖、权限
 | 模块 | 依赖 |
@@ -29,6 +30,7 @@
 |:-:|:-:|
 | 示例app | 无 |
 | 一方库fairy | 略 |
+| 一方库customview | 略 |
 
 ### 使用
 > [SECURITY](https://github.com/snpmyn/MyApplication/blob/master/SECURITY.md)<br>
@@ -83,7 +85,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.snpmyn.MyApplication:fairy:v0.0.1.2X'
+    implementation 'com.github.snpmyn.MyApplication:fairy:v0.0.1.3X'
+    implementation 'com.github.snpmyn.MyApplication:customview:v0.0.1.3X'
 }
 ```
 

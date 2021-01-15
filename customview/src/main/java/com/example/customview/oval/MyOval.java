@@ -1,4 +1,4 @@
-package widget.customview.rect;
+package com.example.customview.oval;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,21 +13,21 @@ import androidx.annotation.Nullable;
  * Created on 2020/7/3.
  *
  * @author zsp
- * @desc 圆角矩形
+ * @desc 椭圆
  */
-public class MyRoundRect extends View {
+public class MyOval extends View {
     private Paint paint;
 
-    public MyRoundRect(Context context) {
+    public MyOval(Context context) {
         super(context);
     }
 
-    public MyRoundRect(Context context, @Nullable AttributeSet attrs) {
+    public MyOval(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paint = new Paint();
     }
 
-    public MyRoundRect(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyOval(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -40,10 +40,8 @@ public class MyRoundRect extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         paint.setAntiAlias(true);
-        paint.setColor(Color.GREEN);
-        paint.setAlpha(66);
-        canvas.drawRoundRect(Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
-                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(),
-                24.0f, 24.0f, paint);
+        paint.setColor(Color.RED);
+        canvas.drawOval(Integer.valueOf(getWidth() / 2 - 240).floatValue(), Integer.valueOf(getHeight() / 2 - 120).floatValue(),
+                Integer.valueOf(getWidth() / 2 + 240).floatValue(), Integer.valueOf(getHeight() / 2 + 120).floatValue(), paint);
     }
 }

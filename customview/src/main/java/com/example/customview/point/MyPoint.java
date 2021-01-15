@@ -1,4 +1,4 @@
-package widget.customview.point;
+package com.example.customview.point;
 
 import android.content.Context;
 import android.graphics.Canvas;

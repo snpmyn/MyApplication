@@ -7,7 +7,7 @@
     android:background="@color/pageBackground"
     tools:context="customview.path.PathActivity">
 
-    <widget.customview.path.MyPath
+    <com.example.customview.path.MyPath
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"

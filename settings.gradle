@@ -1,1 +1,4 @@
-include ':app', ':fairy'
+include ':customview'
+include ':fairy'
+include ':app'
+

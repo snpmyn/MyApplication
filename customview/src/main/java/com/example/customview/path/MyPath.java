@@ -1,4 +1,4 @@
-package widget.customview.path;
+package com.example.customview.path;
 
 import android.content.Context;
 import android.graphics.Canvas;

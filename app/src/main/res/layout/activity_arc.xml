@@ -7,7 +7,7 @@
     android:background="@color/pageBackground"
     tools:context="customview.arc.ArcActivity">
 
-    <widget.customview.arc.MyArc
+    <com.example.customview.arc.MyArc
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"
