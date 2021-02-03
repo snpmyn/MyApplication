@@ -250,25 +250,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         String name = mainActivityModuleList.get(position).getName();
         switch (name) {
             case "自定义VIEW":
-                IntentJump.getInstance().jump(null, this, CustomViewActivity.class);
+                IntentJump.getInstance().jump(null, this, false, CustomViewActivity.class);
                 break;
             case "对话框":
-                IntentJump.getInstance().jump(null, this, DialogActivity.class);
+                IntentJump.getInstance().jump(null, this, false, DialogActivity.class);
                 break;
             case "吐司":
-                IntentJump.getInstance().jump(null, this, ToastActivity.class);
+                IntentJump.getInstance().jump(null, this, false, ToastActivity.class);
                 break;
             case "MVP":
-                IntentJump.getInstance().jump(null, this, MvpActivity.class);
+                IntentJump.getInstance().jump(null, this, false, MvpActivity.class);
                 break;
             case "属性":
-                IntentJump.getInstance().jump(null, this, PropertyActivity.class);
+                IntentJump.getInstance().jump(null, this, false, PropertyActivity.class);
                 break;
             case "图像":
-                IntentJump.getInstance().jump(null, this, ImageActivity.class);
+                IntentJump.getInstance().jump(null, this, false, ImageActivity.class);
                 break;
             case "网格":
-                IntentJump.getInstance().jump(null, this, GridActivity.class);
+                IntentJump.getInstance().jump(null, this, false, GridActivity.class);
                 break;
             default:
                 break;

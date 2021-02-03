@@ -29,9 +29,10 @@ public class IntentJump {
      *
      * @param withValueIntent     携值意图
      * @param context             上下文
+     * @param finish              是否关闭
      * @param targetActivityClass 目标活动
      */
-    public void jump(Intent withValueIntent, Context context, Class<?> targetActivityClass) {
+    public void jump(Intent withValueIntent, Context context, boolean finish, Class<?> targetActivityClass) {
         Intent intent;
         if (null == withValueIntent) {
             intent = new Intent(context, targetActivityClass);
@@ -43,6 +44,10 @@ public class IntentJump {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         context.startActivity(intent);
+        if (finish && (context instanceof Activity)) {
+            Activity activity = (Activity) context;
+            activity.finish();
+        }
     }
 
     /**
@@ -50,10 +55,11 @@ public class IntentJump {
      *
      * @param withValueIntent     携值意图
      * @param activity            活动
+     * @param finish              是否关闭
      * @param targetActivityClass 目标活动
      */
-    public void jumpWithAnimation(Intent withValueIntent, Activity activity, Class<?> targetActivityClass) {
-        jump(withValueIntent, activity, targetActivityClass);
+    public void jumpWithAnimation(Intent withValueIntent, Activity activity, boolean finish, Class<?> targetActivityClass) {
+        jump(withValueIntent, activity, finish, targetActivityClass);
         activity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

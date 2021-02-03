@@ -22,12 +22,7 @@ public interface MvpActivityContract {
         }
 
         private void request() {
-            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    callBack.onResult("UPDATE");
-                }
-            }, 3000);
+            new Handler(Looper.getMainLooper()).postDelayed(() -> callBack.onResult("UPDATE"), 3000);
         }
     }
 
@@ -45,12 +40,7 @@ public interface MvpActivityContract {
 
         public MvpActivityPresenter(final MvpActivityView mvpActivityView) {
             attachView(mvpActivityView);
-            mvpActivityModel = new MvpActivityModel(new CallBack() {
-                @Override
-                public void onResult(String result) {
-                    mvpActivityView.updateText(result);
-                }
-            });
+            mvpActivityModel = new MvpActivityModel(mvpActivityView::updateText);
         }
 
         /**

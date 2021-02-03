@@ -102,35 +102,35 @@ public class CustomViewActivity extends BaseActivity implements View.OnClickList
         switch (view.getId()) {
             // 圆
             case R.id.mainActivityBtnCircle:
-                IntentJump.getInstance().jump(null, this, CircleActivity.class);
+                IntentJump.getInstance().jump(null, this, false, CircleActivity.class);
                 break;
             // 线
             case R.id.mainActivityBtnLine:
-                IntentJump.getInstance().jump(null, this, LineActivity.class);
+                IntentJump.getInstance().jump(null, this, false, LineActivity.class);
                 break;
             // 矩形
             case R.id.mainActivityBtnRect:
-                IntentJump.getInstance().jump(null, this, RectActivity.class);
+                IntentJump.getInstance().jump(null, this, false, RectActivity.class);
                 break;
             // 点
             case R.id.mainActivityBtnPoint:
-                IntentJump.getInstance().jump(null, this, PointActivity.class);
+                IntentJump.getInstance().jump(null, this, false, PointActivity.class);
                 break;
             // 椭圆
             case R.id.mainActivityBtnOval:
-                IntentJump.getInstance().jump(null, this, OvalActivity.class);
+                IntentJump.getInstance().jump(null, this, false, OvalActivity.class);
                 break;
             // 文本
             case R.id.mainActivityBtnText:
-                IntentJump.getInstance().jump(null, this, TextActivity.class);
+                IntentJump.getInstance().jump(null, this, false, TextActivity.class);
                 break;
             // 弧
             case R.id.mainActivityBtnArc:
-                IntentJump.getInstance().jump(null, this, ArcActivity.class);
+                IntentJump.getInstance().jump(null, this, false, ArcActivity.class);
                 break;
             // 路径
             case R.id.mainActivityBtnPath:
-                IntentJump.getInstance().jump(null, this, PathActivity.class);
+                IntentJump.getInstance().jump(null, this, false, PathActivity.class);
                 break;
             default:
                 break;
