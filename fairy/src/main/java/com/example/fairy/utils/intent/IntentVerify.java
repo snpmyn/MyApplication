@@ -14,7 +14,7 @@ import okio.ByteString;
  * 防止服务攻击。
  */
 public class IntentVerify {
-    private final static String KEY = ByteString.encodeUtf8("CtnKey").md5().hex();
+    private final static String KEY = ByteString.encodeUtf8("FairyKey").md5().hex();
 
     /**
      * 是否是坏意图
@@ -48,5 +48,20 @@ public class IntentVerify {
             return null;
         }
         return intent.getStringExtra(key);
+    }
+
+    /**
+     * 获取 double 类型额外信息
+     *
+     * @param intent       意图
+     * @param key          键
+     * @param defaultValue 默值
+     * @return double 类型额外信息
+     */
+    public static double getDoubleExtra(Intent intent, String key, double defaultValue) {
+        if (badIntent(intent)) {
+            return 0.0;
+        }
+        return intent.getDoubleExtra(key, defaultValue);
     }
 }

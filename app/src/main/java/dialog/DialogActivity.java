@@ -233,6 +233,7 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setHint("加载中")
                 .setOnBackPressedListener(() -> ToastKit.showShort(SignUtils.getSignMd5Hex(DialogActivity.this, "com.example.myapplication") + "||" +
                         SignUtils.getSignSha256Hex(DialogActivity.this, "com.example.myapplication"))).build();
+        commonLoadingDialog.setCancelable(false);
         commonLoadingDialog.show();
     }
 
@@ -245,7 +246,6 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 .setOnClickToCloseListener(() -> ToastKit.showShort("clickToClose"))
                 .setOnDialogCloseListener(() -> ToastKit.showShort("dialogClose"))
                 .setOnBackPressedListener(() -> ToastKit.showShort("backPressed")).build();
-        canCancelLoadingDialog.setCancelable(false);
         canCancelLoadingDialog.show();
     }
 }
