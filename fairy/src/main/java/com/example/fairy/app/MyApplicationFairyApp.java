@@ -1,6 +1,9 @@
 package com.example.fairy.app;
 
 import android.app.Application;
+import android.content.res.Configuration;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created on 2021/1/12
@@ -33,6 +36,51 @@ public class MyApplicationFairyApp extends Application {
         super.onCreate();
         // Application 本已单例
         instance = this;
+    }
+
+    /**
+     * This method is for use in emulated process environments.  It will
+     * never be called on a production Android device, where processes are
+     * removed by simply killing them; no user code (including this callback)
+     * is executed when doing so.
+     * <p>
+     * 应用程序对象终止调
+     * <p>
+     * 不定调。应用程序被内核终止为别应用程序释放资源，将不提醒且不调应用程序对象 onTerminate() 而直接终止进程。
+     */
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
+
+    /**
+     * 系统资源匮乏调
+     * <p>
+     * 通于后台进程已结束且前台应用程序仍缺内存时调，重写该法清缓存或释放非必要资源。
+     */
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+    }
+
+    /**
+     * 运行时决定当前应用程序应减内存开销时（通进后台运行）调，含一 level 参数提供请求上下文。
+     *
+     * @param level 级别
+     */
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+    }
+
+    /**
+     * 与 Activity 不同，配置变时应用程序对象不终止和重启。应用程序用值依赖特定配置则重写该法加载这些值或于应用程序级处理配置值改变。
+     *
+     * @param newConfig 配置
+     */
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     public static Application getInstance() {
